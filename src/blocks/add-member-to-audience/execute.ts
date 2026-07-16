@@ -1,10 +1,10 @@
 import {isErrored} from "@attio/fetchable"
-import {experimental_Workflow} from "attio/server"
+import {Workflows} from "attio/server"
 import {getMailchimp} from "../../mailchimp/get-mailchimp"
 import {mailchimpApiErrorUserMessage} from "../../mailchimp/types/errors"
 import block from "./block"
 
-export default experimental_Workflow.defineWorkflowBlockExecute(block, async (config) => {
+export default Workflows.defineWorkflowBlockExecute(block, async ({config}) => {
     const {audienceId, name, email} = config
 
     const result = await getMailchimp().addMemberToAudience({
@@ -23,7 +23,7 @@ export default experimental_Workflow.defineWorkflowBlockExecute(block, async (co
 
     return {
         type: "outcome",
-        slug: "success",
+        id: "success",
         data: null,
     }
 })

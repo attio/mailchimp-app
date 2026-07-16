@@ -1,12 +1,12 @@
 import {isErrored} from "@attio/fetchable"
-import {experimental_Workflow, useAsyncCache} from "attio/client"
+import {Workflows, useAsyncCache} from "attio/client"
 import listAudiences from "../../server-functions/list-audiences.server"
 import {mailchimpApiErrorUserMessage} from "../../mailchimp/types/errors"
 import block from "./block"
 
-export default experimental_Workflow.defineConfigurator(block, (workflowBlock) => {
+export default Workflows.defineConfigurator(block, (workflowBlock) => {
     const {ComboboxInput, EmailAddressInput, PersonalNameInput, Outcome} =
-        experimental_Workflow.useConfigurator(workflowBlock.schema)
+        Workflows.useConfigurator(workflowBlock.configSchema)
 
     const {values} = useAsyncCache({
         audiences: listAudiences,
@@ -59,7 +59,7 @@ export default experimental_Workflow.defineConfigurator(block, (workflowBlock) =
 
             <PersonalNameInput name="name" label="Member name" placeholder="Enter full name..." />
 
-            <Outcome slug="success" schema={null} />
+            <Outcome id="success" schema={null} />
         </>
     )
 })
