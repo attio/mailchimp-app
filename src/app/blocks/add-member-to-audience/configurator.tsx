@@ -1,7 +1,7 @@
 import {isErrored} from "@attio/fetchable"
 import {Workflows, useAsyncCache} from "attio/client"
-import listAudiences from "../../server-functions/list-audiences.server"
-import {mailchimpApiErrorUserMessage} from "../../mailchimp/types/errors"
+import listAudiences from "../../../server-functions/list-audiences.server"
+import {mailchimpApiErrorUserMessage} from "../../../mailchimp/types/errors"
 import block from "./block"
 
 export default Workflows.defineConfigurator(block, (workflowBlock) => {

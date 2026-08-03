@@ -1,7 +1,7 @@
 import {isErrored} from "@attio/fetchable"
 import {Workflows} from "attio/server"
-import {getMailchimp} from "../../mailchimp/get-mailchimp"
-import {mailchimpApiErrorUserMessage} from "../../mailchimp/types/errors"
+import {getMailchimp} from "../../../mailchimp/get-mailchimp"
+import {mailchimpApiErrorUserMessage} from "../../../mailchimp/types/errors"
 import block from "./block"
 
 export default Workflows.defineWorkflowBlockExecute(block, async ({config}) => {

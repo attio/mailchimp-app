@@ -4,8 +4,15 @@
     "src/app.ts",
     "src/blocks/**/*.{ts,tsx}",
     "src/**/*.server.ts",
-    "src/**/*.test.{ts,tsx}"
+    "src/**/*.test.{ts,tsx}",
+    "src/app/extensions/**/extension.{ts,tsx}",
+    "src/app/settings/**/*.{ts,tsx}",
+    "src/app/events/**/*.{ts,tsx}",
+    "src/app/webhooks/**/*.{ts,tsx}",
+    "src/app/blocks/**/*.{ts,tsx}"
   ],
-  "project": ["src/**/*.{ts,tsx}"],
+  "project": [
+    "src/**/*.{ts,tsx}"
+  ],
   "vitest": false
 }
